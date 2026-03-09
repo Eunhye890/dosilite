@@ -44,9 +44,9 @@ export function formatDateKorean(date: Date): string {
   return `${month}월 ${day}일 ${dow}요일`;
 }
 
-/** 'HH:MM' → 'HH:MM' 표시용 (24시간) */
+/** 시간 표시용 — 'HH:MM:SS'도 'HH:MM'으로 자름 */
 export function formatTimeRange(start: string, end: string): string {
-  return `${start}~${end}`;
+  return `${start.slice(0, 5)}~${end.slice(0, 5)}`;
 }
 
 /** 두 날짜가 같은 날인지 비교 */

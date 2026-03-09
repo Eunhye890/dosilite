@@ -1,7 +1,7 @@
 'use client';
 
 import Calendar from '@/components/Calendar';
-import DayReservations from '@/components/DayReservations';
+import AllReservations from '@/components/AllReservations';
 import Fab from '@/components/Fab';
 import FormContainer from '@/components/FormContainer';
 import { useReservations } from '@/hooks/useReservations';
@@ -35,7 +35,7 @@ export default function Home() {
     <main className="min-h-screen max-w-lg mx-auto px-4 py-6 pb-24">
       <Calendar />
       <div className="mt-4">
-        <DayReservations onEdit={handleEdit} />
+        <AllReservations onEdit={handleEdit} />
       </div>
       <Fab onClick={handleAdd} />
       {formOpen && (
