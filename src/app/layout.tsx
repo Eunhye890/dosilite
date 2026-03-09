@@ -3,7 +3,7 @@ import "./globals.css";
 import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "도실라이트 예약 관리",
+  title: "도실리트 예약 시스템",
   description: "공유오피스 예약 일정 관리 시스템",
 };
 
