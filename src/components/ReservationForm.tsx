@@ -107,36 +107,36 @@ export default function ReservationForm({ reservation, onClose }: Props) {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-600 mb-1">예약 제목</label>
+        <label className="block text-sm font-medium text-gray-600 mb-1">예약자</label>
         <input
           type="text"
           value={form.title}
           onChange={e => handleChange('title', e.target.value)}
-          placeholder="고객명 또는 용도"
+          placeholder="예약자 이름"
           className="w-full text-base p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
           required
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-600 mb-1">메모/특이사항</label>
-        <textarea
+        <label className="block text-sm font-medium text-gray-600 mb-1">예약 내용</label>
+        <input
+          type="text"
           value={form.memo}
           onChange={e => handleChange('memo', e.target.value)}
-          placeholder="선택 입력"
-          rows={2}
-          className="w-full text-base p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+          placeholder="개인업무, 회의, 클래스 등"
+          className="w-full text-base p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-600 mb-1">등록자</label>
-        <input
-          type="text"
+        <label className="block text-sm font-medium text-gray-600 mb-1">메모/특이사항</label>
+        <textarea
           value={form.created_by}
           onChange={e => handleChange('created_by', e.target.value)}
-          placeholder="이름 (선택)"
-          className="w-full text-base p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+          placeholder="특이사항이 있으면 입력"
+          rows={2}
+          className="w-full text-base p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
         />
       </div>
 

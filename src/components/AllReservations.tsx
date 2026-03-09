@@ -86,10 +86,10 @@ export default function AllReservations({ onEdit }: Props) {
                       {formatMonthDay(r.date)} {formatTimeRange(r.start_time, r.end_time)}
                     </p>
                     <p className="text-base font-medium text-gray-800 mt-0.5 truncate">
-                      {r.title}{r.created_by ? ` (${r.created_by})` : ''}
+                      {r.memo ? `${r.memo} (${r.title})` : r.title}
                     </p>
-                    {r.memo && (
-                      <p className="text-sm text-gray-500 mt-1 line-clamp-2">{r.memo}</p>
+                    {r.created_by && (
+                      <p className="text-sm text-gray-500 mt-1 line-clamp-2">{r.created_by}</p>
                     )}
                   </div>
 
