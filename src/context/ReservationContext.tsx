@@ -52,14 +52,16 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const now = new Date();
-const initialState: State = {
-  selectedDate: now,
-  currentYear: now.getFullYear(),
-  currentMonth: now.getMonth(),
-  reservations: [],
-  loading: true,
-};
+function createInitialState(): State {
+  const now = new Date();
+  return {
+    selectedDate: now,
+    currentYear: now.getFullYear(),
+    currentMonth: now.getMonth(),
+    reservations: [],
+    loading: true,
+  };
+}
 
 const ReservationContext = createContext<{
   state: State;
@@ -67,7 +69,7 @@ const ReservationContext = createContext<{
 } | null>(null);
 
 export function ReservationProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, null, createInitialState);
   return (
     <ReservationContext.Provider value={{ state, dispatch }}>
       {children}
